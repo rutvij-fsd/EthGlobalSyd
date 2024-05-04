@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import Logo from './logo.png'
+import Logo from './logo.svg'
 import {
   DynamicContextProvider,
   EthereumWalletConnectors,
