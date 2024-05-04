@@ -35,7 +35,7 @@ export default function Home() {
             </button>
 
             {/* Swap button */}
-            <button type="button" style={buttonStyle} onClick={() => router.push('/swap')}>
+            <button type="button" style={buttonStyle} onClick={() => router.push('cxChainTr')}>
               Cross Chain Token Transfer
             </button>
           </div>

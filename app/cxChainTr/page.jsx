@@ -91,7 +91,7 @@ export default function Swap() {
       
       <Loading isLoading={isTransferring} />
       {!isTransferring && transactionHash && (
-        <a href={`https://ccip.chain.link/msg/${transactionHash}`} target="_blank" rel="noopener noreferrer">View Transaction</a>
+        <a style={buttonStyle} href={`https://ccip.chain.link/msg/${transactionHash}`} target="_blank" rel="noopener noreferrer">View Transaction</a>
       )}
       {isTransferring && <Typewriter text="Transaction in progress..." />}
     </div>
