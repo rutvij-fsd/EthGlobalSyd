@@ -78,13 +78,15 @@ export default function Swap() {
       <Image src={logo} alt="Logo" style={{ width: 150, marginBottom: 20 }}/>
       <Typewriter text="Powered by ChainLink" />
 
-      <h1>USDC Transfer</h1>
+      <h1>Transfer USDC From Avalanche Fuji To Sepholia</h1>
       <input type="text" placeholder="Receiver Address" value={receiverAddress} onChange={(e) => setReceiverAddress(e.target.value)} style={{ padding: "10px", margin: "5px", color: "black" }} />
       <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} style={{ padding: "10px", margin: "5px", color: "black"}} />
 
-      <button onClick={() => checkBalance(account)} style={{ padding: "10px", margin: "5px" }}>Check Wallet Balance</button>
-      <button onClick={() => checkBalance(contractAddress)} style={{ padding: "10px", margin: "5px" }}>Check Contract Balance</button>
-      <button onClick={handleTransfer} style={{ padding: "10px", margin: "5px" }}>Transfer USDC</button>
+      <button  type="button" style={buttonStyle} onClick={handleTransfer} >Transfer USDC</button>
+      <div className='flex gap-5'>
+      <button type="button" style={buttonStyle} onClick={() => checkBalance(account)} >Check Wallet Balance</button>
+      <button type="button" style={buttonStyle} onClick={() => checkBalance(contractAddress)} >Check Contract Balance</button>
+      </div>
       {balance && <p>Balance: {balance}</p>}
       
       <Loading isLoading={isTransferring} />
@@ -95,3 +97,17 @@ export default function Swap() {
     </div>
   );
 }
+
+
+const buttonStyle = {
+  background: "rgb(96, 133, 188)",
+  border: "none",
+  borderRadius: "5px",
+  padding: "10px 20px",
+  fontSize: "1rem",
+  cursor: "pointer",
+  transition: "0.3s",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  fontWeight: "bold",
+  color: "black",
+};
