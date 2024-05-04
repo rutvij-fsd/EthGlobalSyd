@@ -42,7 +42,7 @@ export default function RootLayout({
           <DynamicWagmiConnector>
             
             <body className={inter.className} style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "20px" }}>
-              <div className={"w-96"}>
+              <div className={"w-60"}>
               <Link href="/">
                
                 <Image src={Logo} alt="Logo" />

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import Loading from "../Loading";
 import Typewriter from "../Typewriter";
-import logo from '../chainlink-logo.svg'; // Ensure you have the logo image in your project
+import Logo from '../chainlink-logo.svg'; // Ensure you have the logo image in your project
+import logo from '../CROSSLINK.png'
 import Image from "next/image";
 const contractABI = require('./abi.json');
 const contractAddress = '0xc31bdFe9102149E85110833910ee52F02566247b';
@@ -75,9 +76,9 @@ export default function Swap() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem", paddingTop: "2rem" }}>
-      <Image src={logo} alt="Logo" style={{ width: 150, marginBottom: 20 }}/>
+      <Image src={logo} alt="Logo" style={{ width: 250, marginBottom: 5}}/>
       <Typewriter text="Powered by ChainLink" />
-
+      <Image src={Logo} alt="Logo" style={{ width: 250, marginBottom: 5}}/>
       <h1>Transfer USDC From Avalanche Fuji To Sepholia</h1>
       <input type="text" placeholder="Receiver Address" value={receiverAddress} onChange={(e) => setReceiverAddress(e.target.value)} style={{ padding: "10px", margin: "5px", color: "black" }} />
       <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} style={{ padding: "10px", margin: "5px", color: "black"}} />
@@ -91,7 +92,7 @@ export default function Swap() {
       
       <Loading isLoading={isTransferring} />
       {!isTransferring && transactionHash && (
-        <a style={buttonStyle} href={`https://ccip.chain.link/msg/${transactionHash}`} target="_blank" rel="noopener noreferrer">View Transaction</a>
+        <a  href={`https://ccip.chain.link/msg/${transactionHash}`} target="_blank" rel="noopener noreferrer">View Transaction</a>
       )}
       {isTransferring && <Typewriter text="Transaction in progress..." />}
     </div>
